@@ -13,14 +13,20 @@ const CustomFilter = (props: {
   const [selected, setSelected] = useState(props.options[0]);
   const router = useRouter();
 
-  const handleUpadateParams = (e: {type: string, value: string} ) => {
+  const handleUpadateParams = (e: { type: string; value: string }) => {
     const newPathName = updateSearchParams(props.title, e.value.toLowerCase());
-      router.push(newPathName);
+    router.push(newPathName);
   };
 
   return (
     <div className="w-fit">
-      <Listbox value={selected} onChange={(e) => {setSelected(e); handleUpadateParams(e)}}>
+      <Listbox
+        value={selected}
+        onChange={(e) => {
+          setSelected(e);
+          handleUpadateParams(e);
+        }}
+      >
         <div className="relative w-fit z-10">
           <Listbox.Button className={"custom-filter__btn"}>
             <span className="block truncate">{selected.title}</span>
