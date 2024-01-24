@@ -4,11 +4,10 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 import { Listbox, Transition } from "@headlessui/react";
-import { updateSearchParams } from "@/utils";
 
 const CustomFilter = (props: {
   title: string;
-  options: { title: string; value: string };
+  options: {title: string, value: string}[];
   setFilter;
 }) => {
   const [selected, setSelected] = useState(props.options[0]);

@@ -46,8 +46,6 @@ export default function Home() {
     getCars();
   }, [manufacturer, year, limit, fuel, model]);
 
-  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
-
   return (
     <main className="overflow-hidden">
       <Hero />
