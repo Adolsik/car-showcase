@@ -1,17 +1,15 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 import { Listbox, Transition } from "@headlessui/react";
 
 const CustomFilter = (props: {
   title: string;
-  options: {title: string, value: string}[];
-  setFilter;
+  options: { title: string; value: string }[];
+  setFilter: (value: string) => void;
 }) => {
   const [selected, setSelected] = useState(props.options[0]);
-  const router = useRouter();
 
   return (
     <div className="w-fit">

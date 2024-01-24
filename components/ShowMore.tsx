@@ -1,7 +1,7 @@
 "use client";
 import Button from "./Button";
 
-const ShowMore = (props: { pageNumber: number; isNext: boolean; setLimit }) => {
+const ShowMore = (props: { pageNumber: number; isNext: boolean; setLimit: (limit: number) => void }) => {
   const handleNavigation = () => {
     const newLimit = (props.pageNumber + 1) * 10;
     props.setLimit(newLimit);

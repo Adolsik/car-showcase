@@ -16,7 +16,10 @@ const SearchButton = (props: { otherClasses: string }) => (
   </button>
 );
 
-const SearchBar = ({ setManufacturer, setModel }) => {
+const SearchBar = (props: {
+  setManufacturer: (manufacturer: string) => void;
+  setModel: (model: string) => void;
+}) => {
   const [searchManufacturer, setSearchManufacturer] = useState("");
   const [searchModel, setSearchModel] = useState("");
 
@@ -25,7 +28,7 @@ const SearchBar = ({ setManufacturer, setModel }) => {
     if (searchManufacturer === "" && searchModel === "")
       return alert("Please fill in the search bar");
 
-    setModel(searchModel), setManufacturer(searchManufacturer);
+    props.setModel(searchModel), props.setManufacturer(searchManufacturer);
   };
 
   return (
