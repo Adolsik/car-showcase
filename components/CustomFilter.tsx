@@ -9,14 +9,10 @@ import { updateSearchParams } from "@/utils";
 const CustomFilter = (props: {
   title: string;
   options: { title: string; value: string };
+  setFilter;
 }) => {
   const [selected, setSelected] = useState(props.options[0]);
   const router = useRouter();
-
-  const handleUpadateParams = (e: { type: string; value: string }) => {
-    const newPathName = updateSearchParams(props.title, e.value.toLowerCase());
-    router.push(newPathName);
-  };
 
   return (
     <div className="w-fit">
@@ -24,7 +20,7 @@ const CustomFilter = (props: {
         value={selected}
         onChange={(e) => {
           setSelected(e);
-          handleUpadateParams(e);
+          props.setFilter(e.value);
         }}
       >
         <div className="relative w-fit z-10">
