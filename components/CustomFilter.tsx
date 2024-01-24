@@ -1,13 +1,13 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
-
+import { SetStateAction,Dispatch } from "react";
 import { Listbox, Transition } from "@headlessui/react";
 
 const CustomFilter = (props: {
   title: string;
   options: { title: string; value: string }[];
-  setFilter: (value: string) => void;
+  setFilter: any;
 }) => {
   const [selected, setSelected] = useState(props.options[0]);
 
