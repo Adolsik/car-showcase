@@ -9,7 +9,7 @@ import { generateCarImageUrl } from "@/utils";
 const CarCard = (props: {car: {city_mpg: number, class: string, combination_mpg: number, cylinders: number; drive: string, fuel_type: string, highway_mpg: number, make: string, model: string, transmission: string, year: number} }) => {
     const [isOpen, setIsOpen] = useState(false)
   return (
-    <div className="car-card group ">
+    <div className="car-card group " id="cars">
         <div className="car-card__content">
             <h2 className="car-card__content-title">
                 {props.car.make} {props.car.model}
